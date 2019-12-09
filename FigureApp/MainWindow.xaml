@@ -1,0 +1,27 @@
+﻿<Window x:Class="FigureApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FigureApp"
+        mc:Ignorable="d"
+        Title="Figure" Height="600" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="383,185,0,0" VerticalAlignment="Top" Width="100" Grid.RowSpan="2"/>
+        <Button x:Name="button1" Click="Button_Click" Content="Выбрать фаил..." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="111"/>
+
+        <StackPanel Margin="5,5,4.6,5" Grid.RowSpan="2">
+            <Label x:Name="nameFileLabel" Content="Имя файла" Margin="130,0,10,0" RenderTransformOrigin="0.742,2.914"/>
+            <Label x:Name="scaleFigureLabel" Content="Размер фигуры: 1.0" Margin="10,0,0,0"/>
+            <Slider ValueChanged="Slider_ValueChanged" Maximum="10" Minimum="0.1" Value="1" Margin="10,0,0,0" RenderTransformOrigin="0.499,2.398"/>
+        </StackPanel>
+        <Canvas MouseMove="Canvas_MouseMove" Margin="10,95,9.6,10" Grid.RowSpan="2">
+            <Polygon x:Name="polygonView" MouseDown="PolygonView_MouseDown" MouseUp="PolygonView_MouseUp" Fill="LightBlue" Points=""/>
+        </Canvas>
+
+    </Grid>
+</Window>
